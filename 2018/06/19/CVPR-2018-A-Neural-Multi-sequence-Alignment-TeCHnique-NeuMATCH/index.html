@@ -119,11 +119,12 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://pakzslacd.bkt.clouddn.com/blog/180620/aeCh1DLEf9.png?imageslim">
 <meta property="og:image" content="http://pakzslacd.bkt.clouddn.com/blog/180620/mKc05J5ag4.png?imageslim">
+<meta property="og:image" content="http://pakzslacd.bkt.clouddn.com/blog/180621/ckKaHfJHaA.png?imageslim">
 <meta property="og:image" content="http://pakzslacd.bkt.clouddn.com/blog/180620/5bF8KCldig.png?imageslim">
 <meta property="og:image" content="http://pakzslacd.bkt.clouddn.com/blog/180620/I4giJf559F.png?imageslim">
 <meta property="og:image" content="http://pakzslacd.bkt.clouddn.com/blog/180620/ECgI7i0E11.png?imageslim">
 <meta property="og:image" content="http://pakzslacd.bkt.clouddn.com/blog/180620/7e4FiEmA4i.png?imageslim">
-<meta property="og:updated_time" content="2018-06-20T11:20:55.963Z">
+<meta property="og:updated_time" content="2018-06-21T13:39:16.953Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[CVPR 2018]A Neural Multi-sequence Alignment TeCHnique (NeuMATCH)">
 <meta name="twitter:description" content="论文提出了一种端到端训练的模型，称为NeuMATCH，用于处理多个异源（即对齐的两个目标的来源不同，例如视频和文本的对齐）序列对齐的问题。">
@@ -407,7 +408,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-06-20 19:20:55" itemprop="dateModified" datetime="2018-06-20T19:20:55+08:00">2018-06-20</time>
+                <time title="Modified: 2018-06-21 21:39:16" itemprop="dateModified" datetime="2018-06-21T21:39:16+08:00">2018-06-21</time>
               
             
           </span>
@@ -511,7 +512,8 @@
 <h4 id="Language-and-Visual-Encoders"><a href="#Language-and-Visual-Encoders" class="headerlink" title="Language and Visual Encoders"></a><em>Language and Visual Encoders</em></h4><p>先对每个镜头（video clips）和每个句子编码，然后在通过可选择的预训练，将编码后对的镜头和句子嵌入到同一个空间。通过预训练可以得到很好的初始化。</p>
 <p><strong>Video Encoder</strong>  利用VGG-16训练镜头的每一帧，将第一层全连接层的特征提取出来，为4096维。对所有帧的特征进行mean pooling，作为每个镜头的特征。镜头特征在经过三层全连接层，最后的到video的编码信息$v_i$，表示第i个镜头（clip）的编码信息。</p>
 <p><strong>Sentence Encoder</strong>   对每个词使用GloVe嵌入，在经过两层LSTM后，得到最后一层隐藏层的特征$h_t$，在经过三层全连接层得到每个句子的编码信息$s_i$。</p>
-<p>**Enc</p>
+<p><strong>Encoding Alignment and Pre-training</strong>    文中采用了一种可选择的预训练，可以产生一个好的初始化。这里的初始化使用了<a href="https://arxiv.org/abs/1511.06361" target="_blank" rel="noopener">order-embedding</a> ，对于每一对ground-truth  $(V_i,S_i)$，采用一种非对称的相似度度量：<br>$$<br>F(v_i,s_i)=-||max(0,v_i,s_i)||^2<br>$$<br>相似度函数最大值为0。为每对ground-truth随机采样一些对比的clip $V’$和句子$S’$ 。最小化损失函数使得groud-truth的相似度为0，而对比样本的相似度低于一个间隔$\alpha$ 。损失函数为</p>
+<p><img src="http://pakzslacd.bkt.clouddn.com/blog/180621/ckKaHfJHaA.png?imageslim" alt="mark"> </p>
 <h4 id="The-NeuMATCH-Alignment-Network"><a href="#The-NeuMATCH-Alignment-Network" class="headerlink" title="The NeuMATCH Alignment Network"></a><em>The NeuMATCH Alignment Network</em></h4><p><strong>LSTM Stacks</strong> </p>
 <ul>
 <li><p><em>Video Stack</em>   对于每一时刻$t$，video stack包含了还没处理的序列$V_t,V_{t+1},…,V_N$ 。LSTM的方向是从$V_N$到$V_t$，允许信息从未来的clip流到当前的clip，将这个LSTM作为video stack，其隐藏层特征为$h_t^V$。</p>
@@ -693,7 +695,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -771,7 +773,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -870,7 +874,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共5.0k字</span>
+  <span class="post-count">博客全站共6.0k字</span>
 </div>
 
         
