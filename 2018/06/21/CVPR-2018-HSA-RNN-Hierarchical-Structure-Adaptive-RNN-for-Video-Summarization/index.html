@@ -123,7 +123,7 @@
 <meta property="og:image" content="http://pakzslacd.bkt.clouddn.com/blog/180621/LIj24fB2Fj.png?imageslim">
 <meta property="og:image" content="http://pakzslacd.bkt.clouddn.com/blog/180621/f0B3bh76AE.png?imageslim">
 <meta property="og:image" content="http://pakzslacd.bkt.clouddn.com/blog/180621/mbAaFfH1LE.png?imageslim">
-<meta property="og:updated_time" content="2018-06-21T13:27:40.740Z">
+<meta property="og:updated_time" content="2018-06-21T14:32:54.615Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[CVPR 2018]HSA-RNN: Hierarchical Structure-Adaptive RNN for Video Summarization">
 <meta name="twitter:description" content="In this paper, we propose a Hierarchical Structure Adaptive RNN (HSA-RNN) for the video summarization task, which can adaptively exploit the video structure and generate the summary simultaneously.">
@@ -390,7 +390,7 @@
                 
               
 
-              <time title="Created: 2018-06-21 16:30:38 / Modified: 21:27:40" itemprop="dateCreated datePublished" datetime="2018-06-21T16:30:38+08:00">2018-06-21</time>
+              <time title="Created: 2018-06-21 16:30:38 / Modified: 22:32:54" itemprop="dateCreated datePublished" datetime="2018-06-21T16:30:38+08:00">2018-06-21</time>
             
 
             
@@ -503,7 +503,7 @@
 <ul>
 <li>某一时刻双向LSTM处理的帧序列$(f_1,f_2,..,f_k)$，经过隐藏层后有<br>$$<br>h_t^{1,f}=LSTM(f_t,h_{t-1}^{1,f})\<br>h_t^{1,b}=LSTM(f_t,h_{t+1}^{1,b})<br>$$<br>$h_t^{1,f}$和$h_t^{1,b}$是双向LSTM的隐藏层状态。将这两个状态拼接用来计算每一帧的作为shot的边界的置信度$c_t$。<br>$$<br>c_t=softmax(Relu(W_c[h_t^{1,f},h_t^{1,b}]+b_c))<br>$$<br>其中，$c_t$是一个二维向量，包含了是帧作为shot的边界的置信度与否。<br>$$<br>t^<em>=max{c_1(1),c_2(1),…,c_k(1)}<br>$$<br>将$h_{t^</em>}^{1,f}$作为shot的边界。滑动的LSTM下一次处理的帧序列为$(f_{t^<em>+1},f_{t+2},…,f_{t^</em>+k})$。</li>
 </ul>
-<h4 id="layer-2"><a href="#layer-2" class="headerlink" title="layer 2"></a><em>layer 2</em></h4><p>同样利用双向LSTM处理layer 1得到的shot序列$(s_1,s_2,…,s_m)$。<br>$$<br>h_t^{2,f}=LSTM(s_t,h_{t-1}^{2,f})\<br>h_t^{2,b}=LSTM(s_t,h_{t+1}^{2,b})<br>$$<br><u>将隐藏层状态和$s_t$拼接</u>，计算每一shot作为key shot生成视频摘要的置信度。<br>$$<br>p_t=softmax(Relu(W_p[h_t^{2,f};h_t^{2,b};s_t]+b_p))<br>$$<br>损失函数：</p>
+<h4 id="layer-2"><a href="#layer-2" class="headerlink" title="layer 2"></a><em>layer 2</em></h4><p>同样利用双向LSTM处理layer 1得到的shot序列$(s_1,s_2,…,s_m)​$。<br>$$<br>h_t^{2,f}=LSTM(s_t,h_{t-1}^{2,f})\<br>h_t^{2,b}=LSTM(s_t,h_{t+1}^{2,b})<br>$$<br><u>将隐藏层状态和$s_t$拼接</u>，计算每一shot作为key shot生成视频摘要的置信度。<br>$$<br>p_t=softmax(Relu(W_p[h_t^{2,f};h_t^{2,b};s_t]+b_p))<br>$$<br>损失函数：</p>
 <p><img src="http://pakzslacd.bkt.clouddn.com/blog/180621/8A9dJ8KGik.png?imageslim" alt="mark"></p>
 <p>T为视频的数量，$n^{(i)}$是视频的帧数。考虑到生成的shot的长度和人为设定的有不同的间隔差异，这里的预测是frame-level的预测$\hat{p}_t^{(i)}$，通过得到的shot的预测结果分配给shot所包含的frame。$L(\cdot)$为交叉熵。</p>
 <h3 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h3><p><strong>datasets</strong></p>
@@ -579,6 +579,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/01/ICASSP-2018-Advanced-LSTM-A-Study-about-Better-Time-Dependency-Modeling-in-Emotion-Recognition/" rel="prev" title="[ICASSP 2018]Advanced LSTM: A Study about Better Time Dependency Modeling in Emotion Recognition">
+                [ICASSP 2018]Advanced LSTM: A Study about Better Time Dependency Modeling in Emotion Recognition <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -665,7 +669,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -708,7 +712,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">15</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -745,7 +753,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">12</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -844,7 +858,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共6.0k字</span>
+  <span class="post-count">博客全站共6.8k字</span>
 </div>
 
         

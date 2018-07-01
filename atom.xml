@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-21T13:27:40.740Z</updated>
+  <updated>2018-07-01T06:49:52.004Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,73 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>[CVPR 2018]Deep Layer Aggregation</title>
+    <link href="http://yoursite.com/2018/07/01/CVPR-2018-Deep-Layer-Aggregation/"/>
+    <id>http://yoursite.com/2018/07/01/CVPR-2018-Deep-Layer-Aggregation/</id>
+    <published>2018-07-01T02:44:30.000Z</published>
+    <updated>2018-07-01T06:49:52.004Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Aggregation is a decisive aspect of architecture, and as the number of modules multiply their connectivity is made all the more important.By relating architectures for aggregating channels, scales, and resolutions we identified the need for deeper aggregation, and addressed it by iterative deep aggregation and hierarchical deep aggregation. </p></blockquote><a id="more"></a><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p><strong>More nonlinearity, greater capacity, and larger receptive fields generally improve accuracy but can be problematic for optimization and computation.</strong> To overcome these barriers, different blocks or modules have been incorporated to balance and temper these quantities, such as bottlenecks for dimensionality reduction or residual, gated, and concatenative connections for feature and gradient propagation.Networks designed according to these schemes have 100+ and even 1000+ layers.    </p><p>Nevertheless, further exploration is needed on how to connect these layers and modules. Layered networks from LeNet  through AlexNet  to ResNet  stack layers and modules in sequence. Layerwise accuracy comparisons , transferability analysis , and representation visualization  show that deeper layers extract more semantic and more global features, <strong>but these signs do not prove that the last layer is the ultimate representation for any task</strong>. In fact, skip connections have proven effective for classification and regression and more structured tasks. Aggregation, like depth and width, is a critical dimension of architecture.    </p><p>In this work, we investigate how to aggregate layers to better fuse semantic and spatial information for recognition and localization.  <strong>We introduce two structures for deep layer aggregation (DLA): iterative deep aggregation (IDA) and hierarchical deep aggregation (HDA).</strong> </p><p><strong>IDA focuses on fusing resolutions and scales while HDA focuses on merging features from all modules and channels. IDA follows the base hierarchy to refine resolution and aggregate scale stage-by-stage. HDA assembles its own hierarchy of tree-structured connections that cross and merge stages to aggregate different levels of representation.  </strong></p><p><strong>task:</strong>  large-scale image classification, finegrained recognition, semantic segmentation, and boundary detection  </p><h3 id="Related-work"><a href="#Related-work" class="headerlink" title="Related work"></a>Related work</h3><p><strong>Our aggregation architectures are most closely related to leading approaches for fusing feature hierarchies. The key axes of fusion are semantic and spatial. Semantic fusion, or aggregating across channels and depths, improves inference of what. Spatial fusion, or aggregating across resolutions and scales, improves inference of where. Deep layer aggregation can be seen as the union of both forms of fusion.  </strong></p><h3 id="Deep-Layer-Aggregation"><a href="#Deep-Layer-Aggregation" class="headerlink" title="Deep Layer Aggregation"></a>Deep Layer Aggregation</h3><h4 id="iterative-deep-aggregation-IDA"><a href="#iterative-deep-aggregation-IDA" class="headerlink" title="iterative deep aggregation (IDA)"></a><em>iterative deep aggregation (IDA)</em></h4><p>Iterative deep aggregation follows the iterated stacking of the backbone architecture. We divide the stacked blocks of the network into stages according to feature resolution. Deeper stages are more semantic but spatially coarser. </p><ul><li><p>conventional method</p><p>(b)是FCN、FPN、U-net的方法，从粗粒度向细粒度融合。</p><p><img src="http://pakzslacd.bkt.clouddn.com/blog/180701/emj9hkiClD.png?imageslim" alt="mark"></p></li><li><p>IDA</p><p><img src="http://pakzslacd.bkt.clouddn.com/blog/180701/B7HiEfe6I0.png?imageslim" alt="mark"></p></li></ul><h4 id="Hierarchical-Deep-Aggregation-HDA"><a href="#Hierarchical-Deep-Aggregation-HDA" class="headerlink" title="Hierarchical Deep Aggregation(HDA)"></a><em>Hierarchical Deep Aggregation(HDA)</em></h4><p>Hierarchical deep aggregation merges blocks and stages in a tree to preserve and combine feature channels. With HDA shallower and deeper layers are combined to learn richer combinations that span more of the feature hierarchy.    </p><p><img src="http://pakzslacd.bkt.clouddn.com/blog/180701/dF3mIg69E9.png?imageslim" alt="mark"></p><h4 id="aggregation-nodes"><a href="#aggregation-nodes" class="headerlink" title="aggregation nodes"></a><em>aggregation nodes</em></h4><p>特征融合：使用$1*1$的卷积</p><h4 id="blocks-and-stages"><a href="#blocks-and-stages" class="headerlink" title="blocks and stages"></a><em>blocks and stages</em></h4><p>The networks we instantiate in our experiments make use of three types of residual blocks.</p><ul><li><strong>Basic blocks</strong> combine stacked convolutions with an identity skip connection.</li><li><strong>Bottleneck blocks</strong> regularize the convolutional stack by reducing dimensionality through a 1×1 convolution. </li><li><strong>Split blocks</strong> diversify features by grouping channels into a number of separate paths (called the cardinality of the split).</li></ul><h3 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h3><ul><li><p>ImageNet Classification    </p></li><li><p>Fine-grained Recognition    </p></li><li><p>Semantic Segmentation    </p></li><li><p>Boundary Detection    </p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;Aggregation is a decisive aspect of architecture, and as the number of modules multiply their connectivity is made all the more important.By relating architectures for aggregating channels, scales, and resolutions we identified the need for deeper aggregation, and addressed it by iterative deep aggregation and hierarchical deep aggregation. &lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="paper notes" scheme="http://yoursite.com/categories/paper-notes/"/>
+    
+      <category term="CVPR" scheme="http://yoursite.com/categories/paper-notes/CVPR/"/>
+    
+      <category term="2018" scheme="http://yoursite.com/categories/paper-notes/CVPR/2018/"/>
+    
+    
+      <category term="hierarchical" scheme="http://yoursite.com/tags/hierarchical/"/>
+    
+      <category term="aggregation" scheme="http://yoursite.com/tags/aggregation/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[ICASSP 2018]Advanced LSTM: A Study about Better Time Dependency Modeling in Emotion Recognition</title>
+    <link href="http://yoursite.com/2018/07/01/ICASSP-2018-Advanced-LSTM-A-Study-about-Better-Time-Dependency-Modeling-in-Emotion-Recognition/"/>
+    <id>http://yoursite.com/2018/07/01/ICASSP-2018-Advanced-LSTM-A-Study-about-Better-Time-Dependency-Modeling-in-Emotion-Recognition/</id>
+    <published>2018-07-01T02:19:17.000Z</published>
+    <updated>2018-07-01T02:43:07.777Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>We proposed a new type of LSTM, A-LSTM, in this paper. This was a early study of A-LSTM. We applied it in the weighted pooling RNN for emotion recognition.  </p></blockquote><a id="more"></a><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>LSTM每一时刻的状态依赖于上一个时刻，这种假设会约束RNN的建模容量。这篇论文，提出了一种LSTM的变体，advanced LSTM，即A-LSTM，每一时刻依赖于多个不同的时刻。</p><p>改进的方法就是利用了<u><strong>attention based weighted pooling layer</strong></u></p><h3 id="Proposed-approach"><a href="#Proposed-approach" class="headerlink" title="Proposed approach"></a>Proposed approach</h3><h4 id="attention-based-weighted-pooling-RNN"><a href="#attention-based-weighted-pooling-RNN" class="headerlink" title="attention based weighted pooling RNN"></a><em>attention based weighted pooling RNN</em></h4><p>依赖注意力机制学习每一个时间步的一个权重，$h_T$是过去的时间步，可以是一个固定的步长，例如3,4,5。</p><p><img src="http://pakzslacd.bkt.clouddn.com/blog/180701/aA563ghDGB.png?imageslim" alt="mark"></p><h4 id="multi-task-learning"><a href="#multi-task-learning" class="headerlink" title="multi-task learning"></a><em>multi-task learning</em></h4><p>文中的任务是基于语音的动作识别，并且是多任务的学习，包括动作、说话者以及说话者性别的识别</p><p><img src="http://pakzslacd.bkt.clouddn.com/blog/180701/3me4eFF2Eb.png?imageslim" alt="mark"></p><h4 id="advanced-LSTM"><a href="#advanced-LSTM" class="headerlink" title="advanced LSTM"></a><em>advanced LSTM</em></h4><ul><li><p>conventional LSTM</p><p><img src="http://pakzslacd.bkt.clouddn.com/blog/180701/5jfAmKfj4k.png?imageslim" alt="mark"></p></li><li><p>advanced LSTM</p><p>注意：<u>(9)和(10)中的W是共享的</u></p><p><img src="http://pakzslacd.bkt.clouddn.com/blog/180701/BlbDgH68lh.png?imageslim" alt="mark"></p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;We proposed a new type of LSTM, A-LSTM, in this paper. This was a early study of A-LSTM. We applied it in the weighted pooling RNN for emotion recognition.  &lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="paper notes" scheme="http://yoursite.com/categories/paper-notes/"/>
+    
+      <category term="ICASSP" scheme="http://yoursite.com/categories/paper-notes/ICASSP/"/>
+    
+      <category term="2018" scheme="http://yoursite.com/categories/paper-notes/ICASSP/2018/"/>
+    
+    
+      <category term="emotion recognition" scheme="http://yoursite.com/tags/emotion-recognition/"/>
+    
+      <category term="multi-task learning" scheme="http://yoursite.com/tags/multi-task-learning/"/>
+    
+      <category term="attention" scheme="http://yoursite.com/tags/attention/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[CVPR 2018]HSA-RNN: Hierarchical Structure-Adaptive RNN for Video Summarization</title>
     <link href="http://yoursite.com/2018/06/21/CVPR-2018-HSA-RNN-Hierarchical-Structure-Adaptive-RNN-for-Video-Summarization/"/>
     <id>http://yoursite.com/2018/06/21/CVPR-2018-HSA-RNN-Hierarchical-Structure-Adaptive-RNN-for-Video-Summarization/</id>
     <published>2018-06-21T08:30:38.000Z</published>
-    <updated>2018-06-21T13:27:40.740Z</updated>
+    <updated>2018-06-21T14:32:54.615Z</updated>
     
-    <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>In this paper, we propose a Hierarchical Structure Adaptive RNN (HSA-RNN) for the video summarization task, which can adaptively exploit the video structure and generate the summary simultaneously. </p></blockquote><a id="more"></a><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>类似文本序列，视频序列也是一种层次化的结构，由帧（frame）组成镜头（shot），镜头组成视频（video）。</p><p>视频摘要（video summarization）可以分为三个类别，镜头（shots），帧（shots）以及物体（objects）。论文中讨论的是镜头级别的视频摘要，从视频中挑选出关键的shots，因为它更好地保留了视频内容的动态信息和时空一致性。</p><p>视频摘要可以分为两个阶段：1）镜头划分（shot segmentation）；2）挑选关键镜头（key shot selection）。</p><p>通常更多的方法关注的key shot selection，而shot segmentation一般根据帧突然变化、运动幅度变化，或者固定长度划分，但是这样的方法忽略了视频的结构。</p><p>针对先前shot segmentation方法的缺点，文中提出了一种层次化自适应的网络HSA-RNN，可以联合探索视频的结构和视频摘要。<strong><u>更加关注shot segmentation</u></strong></p><h3 id="Approach"><a href="#Approach" class="headerlink" title="Approach"></a>Approach</h3><p>HSA-RNN包含两层：第一层探索视频的结构，划分shot；第二层根据第一层划分的shot生成视频摘要，即挑选出key shot。</p><p><img src="http://pakzslacd.bkt.clouddn.com/blog/180621/KiEk15cJLI.png?imageslim" alt="mark"></p><h4 id="layer-1"><a href="#layer-1" class="headerlink" title="layer 1"></a><em>layer 1</em></h4><p>输入所有帧的特征序列$(f_1,f_2,…,f_n)$，输出所有镜头的特征序列$(s_1,s_2,…,s_m)$。n和m分别是帧和镜头的数量。</p><p>一种简单的方法就是利用LSTM应用于整个视频，每一步通过一个输出阈值判断shot的边界，如图(a)。但是这种方法有两个缺点：</p><p>1）难以应用双向LSTM到这种结构，在检测shot边界时前后的信息都是很重要的。</p><p>2）阈值难以设定。</p><p>文中使用了<strong><u>滑动的双向LSTM</u></strong>解决这个问题，也是论文的亮点，如图(b)。</p><p><img src="http://pakzslacd.bkt.clouddn.com/blog/180621/G207FmiI02.png?imageslim" alt="mark"></p><p>如图(b)，它就像一个固定长度的一维滤波器在帧序列上滑动。双向LSTM的长度$k$凭经验选择（文中k=240），LSTM每次滑动的长度等于检测出的镜头（detected shot）的长度。</p><p>步骤：</p><ul><li>某一时刻双向LSTM处理的帧序列$(f_1,f_2,..,f_k)$，经过隐藏层后有<br>$$<br>h_t^{1,f}=LSTM(f_t,h_{t-1}^{1,f})\<br>h_t^{1,b}=LSTM(f_t,h_{t+1}^{1,b})<br>$$<br>$h_t^{1,f}$和$h_t^{1,b}$是双向LSTM的隐藏层状态。将这两个状态拼接用来计算每一帧的作为shot的边界的置信度$c_t$。<br>$$<br>c_t=softmax(Relu(W_c[h_t^{1,f},h_t^{1,b}]+b_c))<br>$$<br>其中，$c_t$是一个二维向量，包含了是帧作为shot的边界的置信度与否。<br>$$<br>t^<em>=max{c_1(1),c_2(1),…,c_k(1)}<br>$$<br>将$h_{t^</em>}^{1,f}$作为shot的边界。滑动的LSTM下一次处理的帧序列为$(f_{t^<em>+1},f_{t+2},…,f_{t^</em>+k})$。</li></ul><h4 id="layer-2"><a href="#layer-2" class="headerlink" title="layer 2"></a><em>layer 2</em></h4><p>同样利用双向LSTM处理layer 1得到的shot序列$(s_1,s_2,…,s_m)$。<br>$$<br>h_t^{2,f}=LSTM(s_t,h_{t-1}^{2,f})\<br>h_t^{2,b}=LSTM(s_t,h_{t+1}^{2,b})<br>$$<br><u>将隐藏层状态和$s_t$拼接</u>，计算每一shot作为key shot生成视频摘要的置信度。<br>$$<br>p_t=softmax(Relu(W_p[h_t^{2,f};h_t^{2,b};s_t]+b_p))<br>$$<br>损失函数：</p><p><img src="http://pakzslacd.bkt.clouddn.com/blog/180621/8A9dJ8KGik.png?imageslim" alt="mark"></p><p>T为视频的数量，$n^{(i)}$是视频的帧数。考虑到生成的shot的长度和人为设定的有不同的间隔差异，这里的预测是frame-level的预测$\hat{p}_t^{(i)}$，通过得到的shot的预测结果分配给shot所包含的frame。$L(\cdot)$为交叉熵。</p><h3 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h3><p><strong>datasets</strong></p><ul><li>SumMe</li><li>TVSum</li><li>CoSum</li><li>VTW</li></ul><p><strong>results</strong></p><ul><li><p>boundary detection</p><p><img src="http://pakzslacd.bkt.clouddn.com/blog/180621/LIj24fB2Fj.png?imageslim" alt="mark"></p></li><li><p>video summatization </p><p><img src="http://pakzslacd.bkt.clouddn.com/blog/180621/f0B3bh76AE.png?imageslim" alt="mark"></p><p><img src="http://pakzslacd.bkt.clouddn.com/blog/180621/mbAaFfH1LE.png?imageslim" alt="mark"></p></li></ul>]]></content>
+    <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>In this paper, we propose a Hierarchical Structure Adaptive RNN (HSA-RNN) for the video summarization task, which can adaptively exploit the video structure and generate the summary simultaneously. </p></blockquote><a id="more"></a><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>类似文本序列，视频序列也是一种层次化的结构，由帧（frame）组成镜头（shot），镜头组成视频（video）。</p><p>视频摘要（video summarization）可以分为三个类别，镜头（shots），帧（shots）以及物体（objects）。论文中讨论的是镜头级别的视频摘要，从视频中挑选出关键的shots，因为它更好地保留了视频内容的动态信息和时空一致性。</p><p>视频摘要可以分为两个阶段：1）镜头划分（shot segmentation）；2）挑选关键镜头（key shot selection）。</p><p>通常更多的方法关注的key shot selection，而shot segmentation一般根据帧突然变化、运动幅度变化，或者固定长度划分，但是这样的方法忽略了视频的结构。</p><p>针对先前shot segmentation方法的缺点，文中提出了一种层次化自适应的网络HSA-RNN，可以联合探索视频的结构和视频摘要。<strong><u>更加关注shot segmentation</u></strong></p><h3 id="Approach"><a href="#Approach" class="headerlink" title="Approach"></a>Approach</h3><p>HSA-RNN包含两层：第一层探索视频的结构，划分shot；第二层根据第一层划分的shot生成视频摘要，即挑选出key shot。</p><p><img src="http://pakzslacd.bkt.clouddn.com/blog/180621/KiEk15cJLI.png?imageslim" alt="mark"></p><h4 id="layer-1"><a href="#layer-1" class="headerlink" title="layer 1"></a><em>layer 1</em></h4><p>输入所有帧的特征序列$(f_1,f_2,…,f_n)$，输出所有镜头的特征序列$(s_1,s_2,…,s_m)$。n和m分别是帧和镜头的数量。</p><p>一种简单的方法就是利用LSTM应用于整个视频，每一步通过一个输出阈值判断shot的边界，如图(a)。但是这种方法有两个缺点：</p><p>1）难以应用双向LSTM到这种结构，在检测shot边界时前后的信息都是很重要的。</p><p>2）阈值难以设定。</p><p>文中使用了<strong><u>滑动的双向LSTM</u></strong>解决这个问题，也是论文的亮点，如图(b)。</p><p><img src="http://pakzslacd.bkt.clouddn.com/blog/180621/G207FmiI02.png?imageslim" alt="mark"></p><p>如图(b)，它就像一个固定长度的一维滤波器在帧序列上滑动。双向LSTM的长度$k$凭经验选择（文中k=240），LSTM每次滑动的长度等于检测出的镜头（detected shot）的长度。</p><p>步骤：</p><ul><li>某一时刻双向LSTM处理的帧序列$(f_1,f_2,..,f_k)$，经过隐藏层后有<br>$$<br>h_t^{1,f}=LSTM(f_t,h_{t-1}^{1,f})\<br>h_t^{1,b}=LSTM(f_t,h_{t+1}^{1,b})<br>$$<br>$h_t^{1,f}$和$h_t^{1,b}$是双向LSTM的隐藏层状态。将这两个状态拼接用来计算每一帧的作为shot的边界的置信度$c_t$。<br>$$<br>c_t=softmax(Relu(W_c[h_t^{1,f},h_t^{1,b}]+b_c))<br>$$<br>其中，$c_t$是一个二维向量，包含了是帧作为shot的边界的置信度与否。<br>$$<br>t^<em>=max{c_1(1),c_2(1),…,c_k(1)}<br>$$<br>将$h_{t^</em>}^{1,f}$作为shot的边界。滑动的LSTM下一次处理的帧序列为$(f_{t^<em>+1},f_{t+2},…,f_{t^</em>+k})$。</li></ul><h4 id="layer-2"><a href="#layer-2" class="headerlink" title="layer 2"></a><em>layer 2</em></h4><p>同样利用双向LSTM处理layer 1得到的shot序列$(s_1,s_2,…,s_m)​$。<br>$$<br>h_t^{2,f}=LSTM(s_t,h_{t-1}^{2,f})\<br>h_t^{2,b}=LSTM(s_t,h_{t+1}^{2,b})<br>$$<br><u>将隐藏层状态和$s_t$拼接</u>，计算每一shot作为key shot生成视频摘要的置信度。<br>$$<br>p_t=softmax(Relu(W_p[h_t^{2,f};h_t^{2,b};s_t]+b_p))<br>$$<br>损失函数：</p><p><img src="http://pakzslacd.bkt.clouddn.com/blog/180621/8A9dJ8KGik.png?imageslim" alt="mark"></p><p>T为视频的数量，$n^{(i)}$是视频的帧数。考虑到生成的shot的长度和人为设定的有不同的间隔差异，这里的预测是frame-level的预测$\hat{p}_t^{(i)}$，通过得到的shot的预测结果分配给shot所包含的frame。$L(\cdot)$为交叉熵。</p><h3 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h3><p><strong>datasets</strong></p><ul><li>SumMe</li><li>TVSum</li><li>CoSum</li><li>VTW</li></ul><p><strong>results</strong></p><ul><li><p>boundary detection</p><p><img src="http://pakzslacd.bkt.clouddn.com/blog/180621/LIj24fB2Fj.png?imageslim" alt="mark"></p></li><li><p>video summatization </p><p><img src="http://pakzslacd.bkt.clouddn.com/blog/180621/f0B3bh76AE.png?imageslim" alt="mark"></p><p><img src="http://pakzslacd.bkt.clouddn.com/blog/180621/mbAaFfH1LE.png?imageslim" alt="mark"></p></li></ul>]]></content>
     
     <summary type="html">
     
@@ -233,9 +293,9 @@
     
       <category term="hierarchical" scheme="http://yoursite.com/tags/hierarchical/"/>
     
-      <category term="encoder decoder" scheme="http://yoursite.com/tags/encoder-decoder/"/>
-    
       <category term="attention" scheme="http://yoursite.com/tags/attention/"/>
+    
+      <category term="encoder decoder" scheme="http://yoursite.com/tags/encoder-decoder/"/>
     
       <category term="document classification" scheme="http://yoursite.com/tags/document-classification/"/>
     
@@ -266,11 +326,11 @@
     
       <category term="hierarchical" scheme="http://yoursite.com/tags/hierarchical/"/>
     
+      <category term="attention" scheme="http://yoursite.com/tags/attention/"/>
+    
       <category term="time series prediction" scheme="http://yoursite.com/tags/time-series-prediction/"/>
     
       <category term="encoder decoder" scheme="http://yoursite.com/tags/encoder-decoder/"/>
-    
-      <category term="attention" scheme="http://yoursite.com/tags/attention/"/>
     
   </entry>
   
@@ -299,11 +359,11 @@
     
       <category term="hierarchical" scheme="http://yoursite.com/tags/hierarchical/"/>
     
+      <category term="attention" scheme="http://yoursite.com/tags/attention/"/>
+    
       <category term="time series prediction" scheme="http://yoursite.com/tags/time-series-prediction/"/>
     
       <category term="encoder decoder" scheme="http://yoursite.com/tags/encoder-decoder/"/>
-    
-      <category term="attention" scheme="http://yoursite.com/tags/attention/"/>
     
   </entry>
   
